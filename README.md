@@ -1,7 +1,7 @@
-💳 ATM Machine Project
+# ATM Machine Project
 
 Hi! This is my simple ATM Machine project made using Python.
-I created this project to practice basic programming concepts like functions and error handling.
+I created this project to practice basic programming concepts like functions.
 
 ---
 
@@ -10,6 +10,7 @@ I created this project to practice basic programming concepts like functions and
 - Check account balance
 - Deposit money
 - Withdraw money
+- PIN verification for security
 
 ---
 
@@ -17,7 +18,6 @@ I created this project to practice basic programming concepts like functions and
 
 - Python (basic concepts)
 - Functions
-- Try-Except (for handling errors)
 
 ---
 
@@ -34,9 +34,9 @@ python atm.py
 
 🔄 What I will improve next
 
-- Add PIN system for security
+- Add file handling (save balance permanently)
 - Improve user experience
-- Try to store data using files
+- Add transaction history
 
 ---
 
