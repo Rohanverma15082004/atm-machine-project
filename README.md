@@ -1,45 +1,48 @@
-# ATM Machine Project
+# ATM Machine Project 💳💻
 
-Hi! This is my simple ATM Machine project made using Python.
-I created this project to practice basic programming concepts like functions.
-
----
-
-🚀 What this project does
-
-- Check account balance
-- Deposit money
-- Withdraw money
-- PIN verification for security
+Welcome! This is a simple **ATM Machine project** built using Python. It’s designed to practice **Python basics** like functions, loops, input validation, and exception handling. The project features a **menu-driven interface**, **PIN verification**, and user-friendly messages in **English + Hindi**.
 
 ---
 
-🛠️ What I used
+## 🚀 Features
 
-- Python (basic concepts)
-- Functions
+- 🔐 Secure PIN verification (3 attempts)  
+- 💰 Check balance anytime  
+- 💵 Deposit money (only positive amounts allowed)  
+- 🏧 Withdraw money (with sufficient balance check)  
+- 📋 Clean menu layout using f-strings  
+- ⚡ Safe input handling using `try-except`  
+- 🗃 Ready for future **file handling** and **transaction history**  
+- 🗣 Friendly messages in English + Hindi
 
 ---
 
-▶️ How to run this project
+## 🛠 Tech Used
 
-1. Make sure Python is installed on your system
-2. Download or clone this repository
-3. Open terminal or command prompt
-4. Run this command:
+- Python (basic concepts)  
+- Functions & loops  
+- Exception handling (`try-except`)  
+- f-string formatting for clear output
 
+---
+
+## ▶️ How to Run
+
+1. Make sure Python is installed on your system  
+2. Clone or download this repository:  
+```bash
+git clone https://github.com/Rohanverma15082004/ATM-Machine-Project.git
+3. Navigate to the project folder:
+Bash
+cd ATM-Machine-Project
+4. Run the program:
+Bash
 python atm.py
-
----
-
-🔄 What I will improve next
-
-- Add file handling (save balance permanently)
-- Improve user experience
-- Add transaction history
-
----
-
-👨‍💻 About me
-
-I am currently learning Python and building small projects to improve my skills.
+Enter your PIN (1234) and starting balance
+Use the menu to check balance, deposit, withdraw, or exit
+🔄 Future Plans
+Add file handling to save balance permanently
+Track transaction history for deposits and withdrawals
+Enhance overall user experience
+👨‍💻 About Me / Author
+I am Rohan Verma, currently learning Python and building small projects to improve my skills. This ATM project helped me practice functions, loops, input validation, and designing a friendly command-line interface.
