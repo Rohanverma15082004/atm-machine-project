@@ -1,80 +1,104 @@
-print("----------Functions----------")
+# 🔹 Functions
 
 def checkBalance(balance):
-    print(f"Your balance is: {balance}")
-
-
-def depositAmount(balance):
-    amt = float(input("Enter deposit amount: "))
-    balance += amt
-    print(f"Deposit successful! Total balance: {balance}")
     return balance
 
 
-def withdrawAmount(balance):
-    amount = float(input("Enter withdrawal amount: "))
-    if amount <= balance:
-        balance -= amount
-        print(f"Withdrawal successful! Remaining balance: {balance}")
-    else:
-        print(f"Insufficient balance: {balance}")
+def deposit(balance):
+    try:
+        amt = float(input("Enter deposit amount: "))
+        
+        if amt <= 0:
+            print("Amount positive hona chahiye")
+            return balance
+        
+        balance += amt
+        print(f"Deposit successful! Total balance: {balance}")
+    
+    except:
+        print("Galat input diya hai")
+    
     return balance
 
 
-def verifyPin():
+def withdraw(balance):
+    try:
+        amt = float(input("Enter withdraw amount: "))
+        
+        if amt > balance:
+            print("Paise kam hai")
+        
+        elif amt <= 0:
+            print("Amount sahi dalo")
+        
+        else:
+            balance -= amt
+            print(f"Withdrawal successful! Remaining balance: {balance}")
+    
+    except:
+        print("Galat input diya hai")
+    
+    return balance
+
+
+def Pin():
     real_pin = "1234"
-    pin = input("Enter your PIN: ")
-    if pin == real_pin:
-        print("Valid PIN")
-        return True
-    else:
-        print("Invalid PIN")
-        return False
+    
+    for i in range(3):
+        pin = input("Pin dalo: ")
+        
+        if pin == real_pin:
+            print(f"Pin verified successfully ✅")
+            return True
+        else:
+            print(f"Galat pin ❌ | Attempt left: {2-i}")
+    
+    print(f"Card block ho gaya 🚫")
+    return False
 
 
-# Main Program
-mini_Project = "STRING PROJECT"
-print(mini_Project.center(60, "-"))
+# 🔥 MAIN PROGRAM
 
-print()
-program = "Program Number [1]:"
-print(program)
-print()
+if Pin():
 
-a = "___________ATM_MACHINE_PROJECT__________"
-print(a.center(60))
+    # balance input
+    while True:
+        try:
+            balance = float(input("Starting balance dalo: "))
+            break
+        except:
+            print("Number dalo bhai")
 
-balance = float(input("Enter amount: "))
-print()
-
-print("***FEATURES***")
-print("""
-1. Check Balance
+    # menu
+    while True:
+        print(f'''
+========== ATM MENU ==========
+1. Balance Check
 2. Deposit
 3. Withdraw
 4. Exit
-""")
+==============================
+''')
 
+        choice = input("Kya karna hai: ")
 
-while True:
-    choice = int(input("Enter your choice: "))
+        if choice == "1":
+            print(f"💰 Tumhara balance hai: {checkBalance(balance)}")
 
-    if choice == 1:
-        if verifyPin():
-            checkBalance(balance)
+        elif choice == "2":
+            balance = deposit(balance)
 
-    elif choice == 2:
-        balance = depositAmount(balance)
+        elif choice == "3":
+            balance = withdraw(balance)
 
-    elif choice == 3:
-        if verifyPin():
-            balance = withdrawAmount(balance)
+        elif choice == "4":
+            print(f"Thank you! Visit again 👋")
+            break
 
-    elif choice == 4:
-        print("Thank you for using ATM!")
-        break
+        else:
+            print(f"Galat option select kiya hai")
 
-    else:
-        print("Invalid choice")
+else:
+    print(f"Access Denied ❌")
 
 
