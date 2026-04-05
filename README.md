@@ -55,7 +55,7 @@ Deposited: 1000 | Balance: 6000 Withdrawn: 500 | Balance: 5500
 
 1. Make sure Python is installed  
 2. Clone this repository:
-git clone https://github.com/Rohanverma15082004/ATM-Machine-Project.git⁠�
+git clone https://github.com/Rohanverma15082004/ATM-Machine-Project.git
 
 3. Open project folder:
 cd ATM-Machine-Project
