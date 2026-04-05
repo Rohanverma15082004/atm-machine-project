@@ -1,89 +1,109 @@
-# 🔹 Functions
+# 📁 File names
+BAL_FILE = "balance.txt"
+HIS_FILE = "history.txt"
 
-def checkBalance(balance):
-    return balance
+
+# 🔹 1. Load balance (read file)
+def load_balance():
+    try:
+        with open(BAL_FILE, "r") as f:
+            return float(f.read())
+    except:
+        return 0.0   # agar file nahi hai to
 
 
+# 🔹 2. Save balance (write file)
+def save_balance(balance):
+    with open(BAL_FILE, "w") as f:
+        f.write(str(balance))
+
+
+# 🔹 3. Save history (append)
+def save_history(text):
+    with open(HIS_FILE, "a") as f:
+        f.write(text + "\n")
+
+
+# 🔹 4. Deposit
 def deposit(balance):
     try:
-        amt = float(input("Enter deposit amount: "))
-        
+        amt = float(input("Deposit amount dalo: "))
+
         if amt <= 0:
             print("Amount positive hona chahiye")
             return balance
-        
+
         balance += amt
-        print(f"Deposit successful! Total balance: {balance}")
-    
+        print(f"Deposit successful! Balance: {balance}")
+
+        save_balance(balance)
+        save_history(f"Deposited: {amt} | Balance: {balance}")
+
     except:
-        print("Galat input diya hai")
-    
+        print("Galat input")
+
     return balance
 
 
+# 🔹 5. Withdraw
 def withdraw(balance):
     try:
-        amt = float(input("Enter withdraw amount: "))
-        
+        amt = float(input("Withdraw amount dalo: "))
+
         if amt > balance:
             print("Paise kam hai")
-        
+
         elif amt <= 0:
-            print("Amount sahi dalo")
-        
+            print("Sahi amount dalo")
+
         else:
             balance -= amt
-            print(f"Withdrawal successful! Remaining balance: {balance}")
-    
+            print(f"Withdraw successful! Balance: {balance}")
+
+            save_balance(balance)
+            save_history(f"Withdrawn: {amt} | Balance: {balance}")
+
     except:
-        print("Galat input diya hai")
-    
+        print("Galat input")
+
     return balance
 
 
+# 🔹 6. PIN check
 def Pin():
     real_pin = "1234"
-    
+
     for i in range(3):
-        pin = input("Pin dalo: ")
-        
+        pin = input("PIN dalo: ")
+
         if pin == real_pin:
-            print(f"Pin verified successfully ✅")
+            print("PIN correct ✅")
             return True
         else:
-            print(f"Galat pin ❌ | Attempt left: {2-i}")
-    
-    print(f"Card block ho gaya 🚫")
+            print(f"Wrong PIN ❌ | Attempt left: {2-i}")
+
+    print("Card blocked 🚫")
     return False
 
 
 # 🔥 MAIN PROGRAM
-
 if Pin():
 
-    # balance input
-    while True:
-        try:
-            balance = float(input("Starting balance dalo: "))
-            break
-        except:
-            print("Number dalo bhai")
+    balance = load_balance()
+    print(f"💰 Current Balance: {balance}")
 
-    # menu
     while True:
-        print(f'''
-========== ATM MENU ==========
-1. Balance Check
+        print("""
+1. Check Balance
 2. Deposit
 3. Withdraw
 4. Exit
-==============================
-''')
+""")
 
-        choice = input("Kya karna hai: ")
+        choice = input("Choose option: ")
 
         if choice == "1":
-            print(f"💰 Tumhara balance hai: {checkBalance(balance)}")
+            print(f"Balance: {balance}")
 
         elif choice == "2":
             balance = deposit(balance)
@@ -92,13 +112,13 @@ if Pin():
             balance = withdraw(balance)
 
         elif choice == "4":
-            print(f"Thank you! Visit again 👋")
+            print("Thank you 👋")
             break
 
         else:
-            print(f"Galat option select kiya hai")
+            print("Invalid option")
 
 else:
-    print(f"Access Denied ❌")
+    print("Access Denied ❌")
 
 
