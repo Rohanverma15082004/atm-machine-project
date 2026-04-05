@@ -1,48 +1,114 @@
-# ATM Machine Project 💳💻
+# 💳 ATM Machine Project (With File Handling)
 
-Welcome! This is a simple **ATM Machine project** built using Python. It’s designed to practice **Python basics** like functions, loops, input validation, and exception handling. The project features a **menu-driven interface**, **PIN verification**, and user-friendly messages in **English + Hindi**.
-
----
-
-## 🚀 Features
-
-- 🔐 Secure PIN verification (3 attempts)  
-- 💰 Check balance anytime  
-- 💵 Deposit money (only positive amounts allowed)  
-- 🏧 Withdraw money (with sufficient balance check)  
-- 📋 Clean menu layout using f-strings  
-- ⚡ Safe input handling using `try-except`  
-- 🗃 Ready for future **file handling** and **transaction history**  
-- 🗣 Friendly messages in English + Hindi
+Welcome! 👋  
+This is a simple yet powerful ATM Machine project built using Python.  
+Now upgraded with **File Handling**, which allows data to be saved permanently even after closing the program.
 
 ---
 
-## 🛠 Tech Used
+# 🚀 Features
 
-- Python (basic concepts)  
-- Functions & loops  
-- Exception handling (`try-except`)  
-- f-string formatting for clear output
+🔐 Secure PIN verification (3 attempts)  
+💰 Check current balance anytime  
+💵 Deposit money (only positive amount allowed)  
+🏧 Withdraw money (with balance validation)  
+📂 Persistent balance using file handling  
+🧾 Transaction history stored in file  
+⚡ Error handling using try-except  
+📋 Clean and user-friendly menu  
+🗣 Messages in English + Hindi  
 
 ---
 
-## ▶️ How to Run
+# 📁 Files Used
 
-1. Make sure Python is installed on your system  
-2. Clone or download this repository:  
-```bash
-git clone https://github.com/Rohanverma15082004/ATM-Machine-Project.git
-3. Navigate to the project folder:
-Bash
+### 1️⃣ balance.txt
+- Stores current balance  
+- Updated every time deposit/withdraw happens  
+
+Example:
+5500
+
+---
+
+### 2️⃣ history.txt
+- Stores all transaction records  
+- New data is appended (not overwritten)  
+
+Example:
+Deposited: 1000 | Balance: 6000 Withdrawn: 500 | Balance: 5500
+
+---
+
+# 🛠 Tech Used
+
+- Python (Core Concepts)
+- Functions
+- Loops
+- Exception Handling (try-except)
+- File Handling (`r`, `w`, `a` modes)
+- f-strings for formatting
+
+---
+
+# ▶️ How to Run
+
+1. Make sure Python is installed  
+2. Clone this repository:
+git clone https://github.com/Rohanverma15082004/ATM-Machine-Project.git⁠�
+
+3. Open project folder:
 cd ATM-Machine-Project
+
 4. Run the program:
-Bash
 python atm.py
-Enter your PIN (1234) and starting balance
-Use the menu to check balance, deposit, withdraw, or exit
-🔄 Future Plans
-Add file handling to save balance permanently
-Track transaction history for deposits and withdrawals
-Enhance overall user experience
-👨‍💻 About Me / Author
-I am Rohan Verma, currently learning Python and building small projects to improve my skills. This ATM project helped me practice functions, loops, input validation, and designing a friendly command-line interface.
+
+---
+
+# 🔥 How It Works
+
+1. Program starts and loads balance from `balance.txt`  
+2. User enters PIN  
+3. User selects options:
+   - Check Balance  
+   - Deposit  
+   - Withdraw  
+4. Every transaction:
+   - Updates balance file  
+   - Saves history in `history.txt`  
+5. Data remains saved even after program exits  
+
+---
+
+# 💡 Concepts Covered
+
+✔ File Handling (Read, Write, Append)  
+✔ Persistent Data Storage  
+✔ Functions & Modular Code  
+✔ Input Validation  
+✔ Real-world ATM logic  
+
+---
+
+# 🔄 Future Improvements
+
+- Add multiple users support  
+- Add mini statement feature  
+- Store PIN securely in file  
+- Add GUI (Tkinter)  
+
+---
+
+# 👨‍💻 Author
+
+**Rohan Verma**  
+Python Learner 🚀  
+Building projects to improve real-world coding skills  
+
+---
+
+# ⭐ Final Note
+
+This project started as a basic ATM system and evolved into a **file-based persistent system**, making it closer to real-world applications.
+
+If you like this project, feel free to ⭐ star the repo!
